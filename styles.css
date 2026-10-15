@@ -1,0 +1,47 @@
+:root{
+  --bg:#0f1724; --card:#0b1220; --muted:#97a0b3; --accent:#7dd3fc; --text:#e6eef8;
+  --max-width:1100px;
+  --radius:12px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),#071025);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+.container{max-width:var(--max-width);margin:0 auto;padding:2rem;}
+.header-inner{display:flex;align-items:center;justify-content:space-between;}
+.logo{font-weight:700;color:var(--text);text-decoration:none;font-size:1.1rem}
+.nav{display:flex;gap:1rem}
+.nav a{color:var(--muted);text-decoration:none;padding:.25rem .5rem;border-radius:6px}
+.nav a:hover{color:var(--text);background:rgba(255,255,255,0.02)}
+.nav-toggle{display:none;background:none;border:1px solid rgba(255,255,255,0.04);color:var(--text);padding:.25rem .5rem;border-radius:6px}
+
+/* Hero */
+.hero{padding:4rem 0;text-align:center}
+.hero h1{font-size:2.2rem;margin:.2rem 0}
+.hero p{color:var(--muted);max-width:720px;margin:0.5rem auto}
+.cta{display:inline-block;margin-top:1rem;background:var(--accent);color:#012;padding:.6rem 1rem;border-radius:10px;text-decoration:none;font-weight:600}
+
+/* Sections */
+.about, .projects, .skills, .contact{padding:3rem 0}
+.projects .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));padding:1rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03)}
+.card h3{margin:.2rem 0}
+.card p{color:var(--muted);font-size:.95rem}
+
+/* Footer */
+.site-footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:var(--muted)}
+
+/* Responsive */
+@media (max-width:800px){
+  .nav{display:none;flex-direction:column;background:transparent;position:absolute;right:1rem;top:64px;padding:1rem;border-radius:8px}
+  .nav.open{display:flex;background:rgba(255,255,255,0.02);backdrop-filter:blur(4px)}
+  .nav-toggle{display:inline-block}
+  .container{padding:1rem}
+  .hero h1{font-size:1.6rem}
+}
